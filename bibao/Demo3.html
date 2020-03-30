@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        $(function () {
+            function add(x){
+                return function(y){
+                    return x + y;
+                };
+            }
+
+            var addFun1 = add(4);
+            var addFun2 = add(9);
+
+            console.log(addFun1(2)); //6
+            console.log(addFun1(2)); //
+            console.log(addFun2(2));  //11
+
+        })
+
+    </script>
+</head>
+<body>
+
+
+</body>
+</html>

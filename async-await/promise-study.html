@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    const aaa = () => {
+        let p = new Promise(function (resolve, reject) {
+            //做一些异步操作
+            setTimeout(function () {
+                console.log('执行完成Promise aaa');
+                try {
+                    // let i = hahaha;
+                    let i = 1 / 0;
+                    resolve('要返回的数据可以任何数据例如接口返回数据aaa');
+                } catch (e) {
+                    reject(e);
+                }
+            }, 2000);
+        });
+        return p;
+    }
+
+    const bbb = () => {
+        let p = new Promise(function (resolve, reject) {
+            //做一些异步操作
+            setTimeout(function () {
+                console.log('执行完成Promise bbb');
+                try {
+                    // let i = hahaha;
+                    let i = 1 / 0;
+                    resolve('要返回的数据可以任何数据例如接口返回数据bbb');
+                } catch (e) {
+                    reject(e);
+                }
+            }, 2000);
+        });
+        return p;
+    }
+
+
+    aaa().then(data => {
+        console.log("then", data)
+        bbb().then(data => console.log(data))
+    }).catch(reason => {
+        console.log("cache", reason)
+    })
+
+    // bbb().then(
+    //     function (data) {
+    //         console.log("then", data)
+    //     },
+    //     function (reason, data) {
+    //         console.log(reason, data)
+    //     }
+    // )
+
+    // Promise.all([aaa(), bbb()]).then(function (result) {
+    //     console.log("all then", result)
+    // }).catch(function (reason) {
+    //     console.log("all cache", reason)
+    // })
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+
+</head>
+<body>
+
+<script>
+<!-- 注意箭头函数的this指向是上层函数的父对象,而不是上层对象-->
+    // var obj = {
+    //     dd: 5,
+    //     bb: {
+    //         dd: 55,
+    //         bb: function () {
+    //             dd:555;
+    //             console.log(this)
+    //             console.log(this.dd)
+    //         }
+    //     }
+    // }
+    // obj.bb.bb();
+
+    // var obj = {
+    //     dd: 5,
+    //     bb: {
+    //         dd: 55,
+    //         bb: () => {
+    //             dd:555;
+    //             console.log(this)
+    //             console.log(this.dd)
+    //         }
+    //     }
+    // }
+    // obj.bb.bb();
+
+    var obj = {
+        dd: 5,
+        bb: function () {
+            dd:55;
+            obj2 = {
+                dd: 555,
+                bb: () => {
+                    console.log(this);
+                    console.log(this.dd);
+                }
+            }
+            obj2.bb();
+        }
+    }
+    obj.bb();
+
+
+</script>
+
+</body>
+</html>

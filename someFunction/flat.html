@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+
+</head>
+<body>
+
+<script>
+    let a = [1, 2, 3, [5, 6, [7, 9, 10]]];
+    let d = [8, 9];
+    //flat()默认是只扁平化二维，里面包裹的无法扁平化，可以通过flat(int),int参数表示需要扁平化的维数
+    let b = a.flat();
+    console.log(b);// [1, 2, 3, 5, 6, [7]]
+    let c = a.flat(3);
+    console.log(c);// [1, 2, 3, 5, 6, 7]
+    // 递归的方法获取数组的维数（即获取树的高度）
+    function ArrayDeep(arr) {
+        let eleDepths = [];
+        arr.forEach((v) => {
+            let depth = 0;
+            console.log(v, 'v')
+            if( Array.isArray(v)) {
+                depth = ArrayDeep(v);
+            }
+            eleDepths.push(depth)
+            console.log(eleDepths,'---')
+        })
+        return 1 + max(eleDepths)
+    }
+    function max (arr) {
+        return arr.reduce((accr, curr, cc) => {
+            console.log(accr, curr, cc)
+                if (curr > accr) return curr
+                return accr
+        })
+    }
+    console.log(a);
+    console.log(max(d));
+</script>
+
+</body>
+</html>

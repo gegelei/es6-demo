@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        $(function () {
+
+            // 里面变量用var声明，调用过之后会被回收
+            function aaa() {
+                var a = 1;
+            }
+            aaa();
+            console.log(a);// 报错
+            //不使用var，则默认定义的全局变量
+            function bbb() {
+                b = 1;
+            }
+            bbb();
+            console.log(b);//不会报错
+        })
+
+    </script>
+</head>
+<body>
+
+
+</body>
+</html>

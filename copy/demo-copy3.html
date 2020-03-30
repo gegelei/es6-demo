@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+
+<script>
+
+
+    let arr = [1, 2, 3, [33, 44]];
+    // 解构函数本身为浅拷贝
+    let [aa, bb, cc, dd] = arr;
+    let [a, ...late] = arr;
+    arr[2] = 30
+    console.log("later", late)
+
+    // dd = []
+    // arr[3].forEach(v => {
+    //     dd.push(v)
+    // })
+    // arr[3][0] = 100;
+    // console.log(dd)
+
+</script>
+
+</body>
+</html>

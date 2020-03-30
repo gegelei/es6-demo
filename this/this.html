@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+
+</head>
+<body>
+
+<script>
+    //this的指向问题，this指向的是最后一次调用的对象
+    function a() {
+        var user = 'dalei';
+        console.log(user);//'dalei'
+        console.log(this.user);//undefine
+        console.log(this);  //window
+    }
+
+    //此时this指向的是window
+    // a();
+    var b = {
+        user: 'dalei',
+        age: function () {
+            console.log(this.user); //'dalei'
+            console.log(this);
+        }
+    }
+    //此时this指向的是b
+    // b.age();
+
+    var cc = {
+        dd: 5,
+        ee: {
+            dd: 55,
+            info: function () {
+                console.log("info", this.dd) //55
+                console.log("info", this)
+            },
+            info2: () => {
+                console.log("info2", this.dd)
+                console.log("info2", this)
+            }
+        }
+    }
+    // 注意箭头函数的this指向是上层函数的父对象，而不是上层对象
+    cc.ee.info();
+
+    cc.ee.info2();
+
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+
+<script>
+<!--    对象深拷贝-->
+    let obj2 = {
+        "name": "dahai",
+        "age": 23,
+        "son": {
+            "name": "xiaohai"
+        }
+    }
+    let oo2 = {}
+    for (let obj2Key in obj2) {
+        console.log(obj2[obj2Key])
+        oo2[obj2Key] = obj2[obj2Key];
+    }
+
+    alert(JSON.stringify(oo2))
+    // setTimeout(function () {
+    //     console.log(1111111)
+    //     oo2.son.name = "xiaokeai"
+    // }, 10000)
+
+    oo2.son.name = "xiaokeai"
+    alert(JSON.stringify(obj2))
+
+
+</script>
+
+</body>
+</html>

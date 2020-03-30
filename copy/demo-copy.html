@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+
+<script>
+
+    let a = 10;
+    let b = a;
+    b = 20;
+    console.log(a);
+
+
+    let arr = [1, 2, 3, [33, 44]];
+
+    let arrb = [];
+
+    for (v of arr) {
+        arrb.push(v)
+    }
+    arrb[0] = 5;
+    console.log(arr)
+
+
+    // 解构函数浅拷贝
+    let [aa, bb, cc, dd] = arr;
+    arr[0] = 100
+    arr[3][0] = 100;
+    // dd = arr[3]
+    console.log(aa, bb, cc, dd)
+    // let aa = arr[0]
+    // arr[0] = 100;
+    // console.log(aa)
+
+</script>
+
+</body>
+</html>

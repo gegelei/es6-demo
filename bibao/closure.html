@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        $(function () {
+            // 每次调用后变量i都会被回收
+            function haha() {
+                var i = 10;
+                i++;
+                console.log(i)
+            }
+            haha();//11
+            haha();//11
+
+            //给变量i重新定义为一个全局变量，所以不会每次调用都被回收
+            function aaa() {
+                var i = 5;
+                var bbb = () => {
+                    i++;
+                    console.log(i);
+                }
+                return bbb;
+            }
+
+            var vaaa = aaa();
+            vaaa();// 6
+            vaaa();// 7
+
+
+            aaa()();//6
+        })
+
+    </script>
+</head>
+<body>
+
+
+</body>
+</html>

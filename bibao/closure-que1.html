@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    <!--    闭包经典问题一: 因作用域问题,每次点击的i都为最后一个   原生-->
+    window.onload = function () {
+        // var arr = document.getElementsByTagName("li");
+        // for (var i = 0; i < arr.length; i++) {
+        //     arr[i].onclick = () => {
+        //         alert(i);
+        //     }
+        // }
+
+        //解决方法一： 使用let定义局部变量
+        // var arr = document.getElementsByTagName("li");
+        // for (let i = 0; i < arr.length; i++) {
+        //     arr[i].onclick = () => {
+        //         alert(i);
+        //     }
+        // }
+
+        //解决方法二： 改变变量
+        // var arr = document.getElementsByTagName("li");
+        // for (var i = 0; i < arr.length; i++) {
+        //     arr[i].onclick = (j => {
+        //         console.log(j);
+        //     })(i);
+        // }
+
+        //解决方法三： 使用let定义局部变量
+        var arr = document.getElementsByTagName("li");
+        for (var i = 0; i < arr.length; i++) {
+            (j => {
+                arr[i].onclick = () => {
+                    console.log(j);
+                }
+            })(i)
+
+        }
+    }
+
+
+</script>
+<ul>
+    <li>0</li>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+</body>
+</html>

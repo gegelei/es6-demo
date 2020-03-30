@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+
+</head>
+<body>
+
+<script>
+
+
+    let obj = {
+        "a":1,
+        "b":"2"
+    }
+
+    function ff(haha){
+        let obj = {
+            ...haha,
+            "c":3
+        }
+        console.log(obj)
+    }
+
+    ff(obj);
+
+
+    function dd(haha) {
+
+        let obj = {
+            ...haha,
+            "b":"20"
+        }
+        console.log(obj)
+
+    }
+
+    dd(obj)
+
+
+</script>
+
+</body>
+</html>

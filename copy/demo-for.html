@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+
+<script>
+
+
+    let arr = [1, 2, 3, [33, 44]];
+
+    for (let i = 0; i < arr.length; i++) {
+        console.log(arr[i])
+    }
+
+    console.log("-------------")
+    for (i in arr) {
+        console.log(arr[i])
+    }
+
+    console.log("-------------")
+    for (i of arr) {
+        console.log(i)
+    }
+    console.log("-------------")
+
+    arr.forEach((v, i) => {
+        console.log(v, i)
+    })
+
+    console.log("--------------")
+    let ret = arr.map((v, i) => {
+        console.log(v, i)
+        return v * 2;
+    })
+    console.log("ret", ret)
+
+    $(() => {
+
+    })
+
+
+</script>
+
+</body>
+</html>
