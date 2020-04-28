@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        $(function () {
+
+            $('#btn').click(function(){
+                $.ajax({
+                    url:"http://39.106.126.249:7777/api/center/login",
+                    type:"post",
+                    dataType: "json",
+                    data:{
+                        "account": "254745674567",
+                        "password": "976e3af6173e0939c642ea003e4cb956",
+                        "platform": 3,
+                        "device": {
+                            "udid": "254745674567"
+                        }
+                    },
+                    success:function(res){//res表示是否与服务器连接成功
+                        console.log(res);//json中的数据
+                    },
+                    error:function(e){
+                        console.log(e);//抛弃异常
+                    }
+                });
+            });
+
+
+        })
+
+    </script>
+</head>
+<body>
+<div>
+    <button id="btn">点我发起请求</button>
+</div>
+
+</body>
+</html>
