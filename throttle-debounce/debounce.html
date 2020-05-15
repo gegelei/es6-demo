@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        $(function () {
+            //    防抖函数:个人理解：短时间内多次触发，只执行一次，且是最后一次。适用于才操作过程中不需要执行的操作，例如搜索，只想在用户完成搜索后执行一次。
+            function debounce (fn, delay) {
+                var time = '';
+                return function (e) {
+                    // 每当用户输入的时候把前一个 setTimeout clear 掉
+                    clearTimeout(time);
+                    // 然后又创建一个新的 setTimeout, 这样就能保证interval 在一定间隔内如果时间持续触发，就不会执行 fn 函数
+                    time = setTimeout(() => {
+                        fn.apply(this, arguments);
+                    }, delay);
+                };
+            }
+            // 处理函数
+            function handle() {
+                console.log('防抖：', Math.random());
+            }
+            //滚动事件
+            window.addEventListener('scroll', debounce(handle,1000));
+        })
+
+    </script>
+</head>
+<body>
+<div>
+    <div>Hello. 防抖函数</div>
+    <div>Hello. 防抖函数</div>
+    <div>Hello. 防抖函数</div>
+    <div>Hello. 防抖函数</div>
+    <div>Hello. 防抖函数</div>
+    <div>Hello. 防抖函数</div>
+    <div>Hello. 防抖函数</div>
+    <div>Hello. 防抖函数</div>
+    <div>Hello. 防抖函数</div>
+    <div>Hello. 防抖函数</div>
+    <div>Hello. 防抖函数</div>
+    <div>Hello. 防抖函数</div>
+    <div>Hello. 防抖函数</div>
+    <div>Hello. 防抖函数</div>
+    <div>Hello. 防抖函数</div>
+    <div>Hello. 防抖函数</div>
+    <div>Hello. 防抖函数</div>
+    <div>Hello. 防抖函数</div>
+    <div>Hello. 防抖函数</div>
+    <div>Hello. 防抖函数</div>
+    <div>Hello. 防抖函数</div>
+
+</div>
+
+</body>
+</html>
