@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+      $(function () {
+          //节流函数：个人理解：是周期性的执行操作；例如滑动：在滑动过程中是也需要去加载。
+          //  方法一. 定时器实现一
+          function throttle(fn, delay) {
+              var timeout = false;
+              return function () {
+                  if (!timeout) {
+                      timeout = setTimeout(() => {
+                          fn.apply(this, arguments);
+                          timeout = false;
+                      }, delay)
+                  }
+              }
+          }
+
+          //  方法二. 定时器实现二
+          // function throttle (fn, delay) {
+          //     var timer = null;
+          //     return function(){
+          //         if(!timer){
+          //             timer = setTimeout(function(){
+          //                 fn.apply(this, arguments);
+          //                 // timer = null;
+          //             }, delay)
+          //             console.log('settimeout', timer);
+          //         }
+          //     }
+          // }
+
+        // 方法三. 时间戳实现
+        // function throttle (fn, wait) {
+        //   var pre = Date.now()
+        //   return function () {
+        //     var now = Date.now()
+        //     if (now - pre >= wait) {
+        //       fn.apply(this, arguments)
+        //       pre = Date.now()
+        //     }
+        //   }
+        // }
+        //    测试
+        function testThrottle (e) {
+          console.log('节流', Math.random())
+        }
+
+        window.addEventListener('scroll', throttle(testThrottle, 1000))
+
+      })
+
+    </script>
+</head>
+<body>
+<div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+    <div>Hello. 节流函数</div>
+</div>
+
+</body>
+</html>
