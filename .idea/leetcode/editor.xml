@@ -3,11 +3,35 @@
   <component name="LeetcodeEditor">
     <option name="projectConfig">
       <map>
+        <entry key="$PROJECT_DIR$/leetcode/cn/leetcode/editor/cn/[13]罗马数字转整数.js">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/leetcode/cn/leetcode/editor/cn/[13]罗马数字转整数.js" />
+              <option name="questionId" value="13" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/leetcode/cn/leetcode/editor/cn/[1]两数之和.js">
           <value>
             <LeetcodeEditor>
               <option name="path" value="$PROJECT_DIR$/leetcode/cn/leetcode/editor/cn/[1]两数之和.js" />
               <option name="questionId" value="1" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/leetcode/cn/leetcode/editor/cn/[7]整数反转.js">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/leetcode/cn/leetcode/editor/cn/[7]整数反转.js" />
+              <option name="questionId" value="7" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/leetcode/cn/leetcode/editor/cn/[9]回文数.js">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/leetcode/cn/leetcode/editor/cn/[9]回文数.js" />
+              <option name="questionId" value="9" />
             </LeetcodeEditor>
           </value>
         </entry>
