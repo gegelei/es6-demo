@@ -60,6 +60,7 @@
  */
 var romanToInt = function(s) {
   let obj = {'I':1, 'V':5, 'X':10, 'L':50, 'C':100, 'D':500, 'M':1000}
+  console.log(obj.hasOwnProperty("I"))
   let res = 0
   let s1 = s.toString();
 
