@@ -1,0 +1,185 @@
+Index: ajax/Demo1.html
+===================================================================
+--- ajax/Demo1.html	(revision a26e6057766fd1cf07a574a5faeeae1ec76d4d0a)
++++ ajax/Demo1.html	(revision a26e6057766fd1cf07a574a5faeeae1ec76d4d0a)
+@@ -1,44 +0,0 @@
+-<!DOCTYPE html>
+-<html lang="en">
+-<head>
+-    <meta charset="UTF-8">
+-    <title>Title</title>
+-
+-    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+-    <script>
+-        $(function () {
+-
+-            $('#btn').click(function(){
+-                $.ajax({
+-                    url:"http://39.106.126.249:7777/api/center/login",
+-                    type:"post",
+-                    dataType: "json",
+-                    data:{
+-                        "account": "254745674567",
+-                        "password": "976e3af6173e0939c642ea003e4cb956",
+-                        "platform": 3,
+-                        "device": {
+-                            "udid": "254745674567"
+-                        }
+-                    },
+-                    success:function(res){//res表示是否与服务器连接成功
+-                        console.log(res);//json中的数据
+-                    },
+-                    error:function(e){
+-                        console.log(e);//抛弃异常
+-                    }
+-                });
+-            });
+-
+-
+-        })
+-
+-    </script>
+-</head>
+-<body>
+-<div>
+-    <button id="btn">点我发起请求</button>
+-</div>
+-
+-</body>
+-</html>
+Index: ajax/Demo-jquery.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ajax/Demo-jquery.html	(date 1596507327981)
++++ ajax/Demo-jquery.html	(date 1596507327981)
+@@ -0,0 +1,44 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <title>Title</title>
++
++    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
++</head>
++<body>
++
++<script>
++  $(function () {
++
++    let data = {
++      'account': '2347131313131',
++      'password': '33e1c9a50b6ea74622c9019d0e09f04e',
++      'platform': 3,
++      'device': { 'udid': '2347131313131' }
++    }
++
++    $('#btn').click(function () {
++      $.ajax({
++        url: 'https://casino-api.gbank.team/api/center/login',
++        type: 'post',
++        dataType: 'json',
++        data: JSON.stringify(data),
++        success: function (res) {//res表示是否与服务器连接成功
++          console.log(res)//json中的数据
++        },
++        error: function (e) {
++          console.log(e)//抛弃异常
++        }
++      })
++    })
++
++  })
++
++</script>
++<div>
++    <button id="btn">点我发起请求</button>
++</div>
++
++</body>
++</html>
+Index: ajax/Demo-axios.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ajax/Demo-axios.html	(date 1596508168923)
++++ ajax/Demo-axios.html	(date 1596508168923)
+@@ -0,0 +1,50 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <title>Title</title>
++
++    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.20.0-0/axios.min.js"></script>
++
++</head>
++<body>
++
++<script>
++  function learnAxios () {
++    let data = {
++      'account': '2347131313131',
++      'password': '33e1c9a50b6ea74622c9019d0e09f04e',
++      'platform': 3,
++      'device': { 'udid': '2347131313131' }
++    }
++
++    axios.post('https://casino-api.gbank.team/api/center/login', data, {
++      timeout: 1000,
++    }).then((res) => {
++      console.log('res>>>1>>>', res.data)
++    })
++
++    axios({
++      url: 'https://casino-api.gbank.team/api/center/login',
++      method: 'post',
++      // 或者data: JSON.stringify(data)
++      data: data,
++      timeout: 1000,
++      // 好像默认的就是'Content-Type': 'application/json; charset=utf-8'
++      headers: {
++        'Content-Type': 'application/json; charset=utf-8'
++      }
++    }).then((res) => {
++      console.log('res>>>2>>>', res.data)
++    })
++
++  }
++
++</script>
++
++<div>
++    <button onclick="learnAxios()">点我发起请求</button>
++</div>
++
++</body>
++</html>
+Index: gg/Test.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- gg/Test.js	(date 1594205732298)
++++ gg/Test.js	(date 1594205732298)
+@@ -0,0 +1,15 @@
++var reverse = function (x) {
++  const INT_MAX = Math.pow(2, 31) - 1 // 最大值
++  const INT_MIN = -Math.pow(2, 31) // 最小值
++  if (x > INT_MAX || x < INT_MIN || x === 0) return 0
++  let newnum = 0
++  while (x != 0) {
++    newnum = newnum * 10 + x % 10
++    x = x / 10
++  }
++  if (newnum > INT_MAX || newnum < INT_MIN) return 0
++  return newnum
++}
++
++var number = reverse(123)
++console.log(number)
+diff --git ajax/FetchTest.html ajax/Demo-Fetch.html
+rename from ajax/FetchTest.html
+rename to ajax/Demo-Fetch.html
