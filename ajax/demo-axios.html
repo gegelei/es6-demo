@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.20.0-0/axios.min.js"></script>
+
+</head>
+<body>
+
+<script>
+
+
+  function learn () {
+    let data = {
+      'account': '2347131313131',
+      'password': '33e1c9a50b6ea74622c9019d0e09f04e',
+      'platform': 3,
+      'device': { 'udid': '2347131313131' }
+    }
+
+    axios.post('https://casino-api.gbank.team/api/center/login', data).then((res) => {
+      console.log('res>>>1>>>', res.data)
+    })
+
+    axios({
+      url: 'https://casino-api.gbank.team/api/center/login',
+      method: 'post',
+      data: data
+    }).then((res) => {
+      console.log('res>>>2>>>', res.data)
+    })
+
+  }
+
+
+</script>
+
+<div>
+    <button onclick="learn()">点我发起请求</button>
+</div>
+
+</body>
+</html>
