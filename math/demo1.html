@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/5.0.0/math.js"></script>
+
+</head>
+<body>
+
+<script>
+    let a = 1.222
+    let b = 2.334
+    let c = 2
+    // 不损失精度的计算
+    console.log(math.eval(a * (b + c)));  // 5.296148
+    console.log(math.valueOf(a * (b + c)));  // 5.296148
+    // 绝对值
+    console.log(math.abs(a)); // 1.222
+    // 四舍五入
+    console.log(math.round(a + b)); //4
+    // 上舍入
+    console.log(math.ceil(a + b)); //4
+    // 下舍入
+    console.log(math.floor(a + b)); //3
+    // max/min  最大值/最小值
+</script>
+
+</body>
+</html>

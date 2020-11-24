@@ -4,42 +4,33 @@
     <meta charset="UTF-8">
     <title>Title</title>
 
-    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.20.0-0/axios.min.js"></script>
+    <script src="./axios.min.js"></script>
 
 </head>
 <body>
 
-<script>
-
-
-  function learn () {
-    let data = {
-      'account': '2347131313131',
-      'password': '33e1c9a50b6ea74622c9019d0e09f04e',
-      'platform': 3,
-      'device': { 'udid': '2347131313131' }
-    }
-
-    axios.post('https://casino-api.gbank.team/api/center/login', data).then((res) => {
-      console.log('res>>>1>>>', res.data)
-    })
-
-    axios({
-      url: 'https://casino-api.gbank.team/api/center/login',
-      method: 'post',
-      data: data
-    }).then((res) => {
-      console.log('res>>>2>>>', res.data)
-    })
-
-  }
-
-
-</script>
-
 <div>
-    <button onclick="learn()">点我发起请求</button>
+    <button onclick="learn()">点我发起请求B695868DFDAFA2FFDD6272EBEEE2B3CF</button>
+    <div id="hello">B695868DFDAFA2FFDD6272EBEEE2B3CF</div>
 </div>
 
+<script>
+
+    function learn () {
+        let data = document.getElementById('hello')
+        axios({
+            url: 'https://10.153.80.4:8084/mkd/md5',
+            method: 'post',
+            data: [data],
+            header: {
+                "Content-Type" : "application/json",
+                "requiredKey": "c451f7b8714cab1e3ea87789fd765f6a893fa164"
+            }
+        }).then((res) => {
+            console.log('res', res)
+        })
+
+    }
+</script>
 </body>
 </html>
