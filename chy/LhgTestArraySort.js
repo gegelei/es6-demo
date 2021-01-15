@@ -7,14 +7,6 @@ Person.prototype.toString = function () {
   return '(' + this.sex + ', ' + this.age + ')'
 }
 
-function compare(property){
-  return function(a,b){
-      var value1 = a[property];
-      var value2 = b[property];
-      return value1 - value2;
-  }
-}
-
 let arr = []
 arr.push(new Person('男', 22))
 arr.push(new Person('女', 8))
@@ -45,7 +37,8 @@ arr.findIndex((value, index, arr) => {
     arr6.push(new Person(value.sex, value.age))
   }
 })
-arr6.sort(compare('age'));
+
+arr6.sort((p1, p2) => p1.age - p2.age);
 
 for(let k = 0; k<arr.length; k++) {
   //女
