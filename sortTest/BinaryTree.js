@@ -1,4 +1,6 @@
-// 参考https://www.cnblogs.com/caimuguodexiaohongmao/p/11123933.html
+// 参考：（有误）https://www.cnblogs.com/caimuguodexiaohongmao/p/11123933.html
+
+// 正解：https://blog.csdn.net/zlejan/article/details/106818982
 
 class Node {
   constructor (key) {
