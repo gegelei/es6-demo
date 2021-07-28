@@ -11,26 +11,58 @@
 
 <div>
     <button onclick="learn()">点我发起请求B695868DFDAFA2FFDD6272EBEEE2B3CF</button>
+    <button onclick="dahai()">点我发起请求axios</button>
     <div id="hello">B695868DFDAFA2FFDD6272EBEEE2B3CF</div>
 </div>
 
 <script>
 
-    function learn () {
-        let data = document.getElementById('hello')
-        axios({
-            url: 'https://10.153.80.4:8084/mkd/md5',
-            method: 'post',
-            data: [data],
-            header: {
-                "Content-Type" : "application/json",
-                "requiredKey": "c451f7b8714cab1e3ea87789fd765f6a893fa164"
-            }
-        }).then((res) => {
-            console.log('res', res)
-        })
-
+  function dahai () {
+    let data = {
+      'sportId': 'sr:sport:1',
+      'groupIndex': 0,
+      'sportCategoryId': '',
+      'tournamentId': '',
+      'producer': 3,
+      'position': 17,
+      'beginTime': '',
+      'endTime': '',
+      'showMarket': true,
+      'timeZone': '+8',
+      'page': 1,
+      'pageSize': 30,
+      'highLight': false,
+      'excludedCategoryIds': [],
+      'sortType': 2,
+      'dataGroup': true
     }
+    axios({
+      url: 'http://192.168.124.96:9008/api/bet/match/list',
+      method: 'post',
+      data: data,
+      header: {
+        'Content-Type': 'application/json',
+      }
+    }).then((res) => {
+      console.log('res', res)
+    })
+  }
+
+  function learn () {
+    let data = document.getElementById('hello')
+    axios({
+      url: 'https://10.153.80.4:8084/mkd/md5',
+      method: 'post',
+      data: [data],
+      header: {
+        'Content-Type': 'application/json',
+        'requiredKey': 'c451f7b8714cab1e3ea87789fd765f6a893fa164'
+      }
+    }).then((res) => {
+      console.log('res', res)
+    })
+
+  }
 </script>
 </body>
 </html>
